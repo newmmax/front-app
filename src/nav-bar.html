@@ -1,0 +1,23 @@
+
+<template bindable="router">
+
+  <nav class="primary nav-wrapper">
+    <div class="nav-wrapper">
+      <a md-sidenav-collapse="ref.bind: sideNav;" md-waves md-button class="right hide-on-large-only">
+        <i class="material-icons">menu</i></a>
+      <a href="#" class="brand-logo left">
+      <span class="flow-text">
+
+
+      </span>
+      </a>
+      <md-sidenav view-model.ref="sideNav">
+        <ul>
+          <li md-waves repeat.for="row of router.navigation" class="${row.isActive ? 'active' : ''}">
+            <a href.bind="row.href">${row.title}</a>
+          </li>
+        </ul>
+      </md-sidenav>
+    </div>
+  </nav>
+</template>
